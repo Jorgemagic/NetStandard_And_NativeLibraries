@@ -1,0 +1,12 @@
+\.mfractor/
+
+\.vs/
+
+*.suo
+*.user
+bin
+obj
+packages
+
+
+\.DS_Store

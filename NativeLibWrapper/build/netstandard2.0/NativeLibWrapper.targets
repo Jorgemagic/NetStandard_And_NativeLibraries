@@ -1,0 +1,52 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <LibraryName>NativeLibWrapper</LibraryName>
+    <IsWindowsSolution>$(SolutionName.Contains('Windows'))</IsWindowsSolution>
+    <IsNetCoreSolution>$(SolutionName.Contains('NetCore'))</IsNetCoreSolution>
+    <IsMacSolution>$(SolutionName.Contains('Mac'))</IsMacSolution>
+    <IsLinuxSolution>$(SolutionName.Contains('Linux'))</IsLinuxSolution>
+    <IsAndroidSolution>$(SolutionName.Contains('Android'))</IsAndroidSolution>
+    <IsIOSSolution>$(SolutionName.Contains('IOS'))</IsIOSSolution>
+    <IsUWPSolution>$(SolutionName.Contains('UWP'))</IsUWPSolution>
+    <IsNugetSolution>$(SolutionName.Contains('Nuget'))</IsNugetSolution>   
+  </PropertyGroup>
+
+
+  <ItemGroup>       
+    
+    <!-- Nuget -->
+    <Content Condition="$(IsNugetSolution)" Include="binaries\**" PackagePath="binaries" Visible="true" />
+    <Content Condition="$(IsNugetSolution)" Include="build\**" PackagePath="build" Visible="true" />
+    <Content Condition="$(IsNugetSolution)" Include="$(LibraryName).dll.config" PackagePath="" Visible="true" />
+
+    <!-- Windows -->
+    <Content Condition="$(IsWindowsSolution)" Include="$(MSBuildThisFileDirectory)..\..\binaries\win\**">      
+      <Link>binaries/win/%(RecursiveDir)%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Visible>True</Visible>      
+    </Content>
+
+    <!-- Mac -->
+    <Content Condition="$(IsMacSolution)" Include="$(MSBuildThisFileDirectory)..\..\binaries\osx\**">
+      <Link>binaries/osx/%(RecursiveDir)%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Visible>True</Visible>
+    </Content>
+
+    <!-- Linux -->
+    <Content Condition="$(IsLinuxSolution)" Include="$(MSBuildThisFileDirectory)..\..\binaries\linux\**">
+      <Link>binaries/linux/%(RecursiveDir)%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Visible>True</Visible>
+    </Content>
+
+    <Content Condition="$(IsNugetSolution) == 'false'" Include="$(MSBuildThisFileDirectory)..\..\$(LibraryName).dll.config">
+      <Link>$(LibraryName).dll.config</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Visible>True</Visible>
+    </Content>
+    
+  </ItemGroup>
+
+</Project>
