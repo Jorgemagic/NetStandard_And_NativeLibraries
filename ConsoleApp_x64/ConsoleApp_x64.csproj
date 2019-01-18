@@ -15,10 +15,4 @@
     <ProjectReference Include="..\NativeLibWrapper\NativeLibWrapper.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="shader.hlsl">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
 </Project>
