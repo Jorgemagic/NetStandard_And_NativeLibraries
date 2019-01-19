@@ -60,5 +60,5 @@ cmake --build .
 To add Android, iOS and UWP platforms.
 
 ## Special Thanks
-- @jacano
-- @danielcaceresm
+- [jacano](https://github.com/jacano)
+- [danielcaceresm](https://github.com/danielcaceresm)
