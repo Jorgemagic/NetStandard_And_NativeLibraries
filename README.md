@@ -10,7 +10,7 @@ Cross-platform C# NetStandard Library template that requires a C++ native librar
 
 ## Goal
 
-Create a C# NetStandard library that requires a C++ Native Library. Its must be copy the correct native library file by platform *(Windows, Linux and Mac)* and architecture *(x86 or x64)*  when it is referenced by another C# library/exe. Furthermore the C# NetStandard library must be prepared to provide a nuget package. So we can to use it as reference library *(development)* or a nuget library *(release)* and the behavior must be the same.
+Create a C# NetStandard library that requires a C++ Native Library. Its must be copy the correct native library file by platform *(Windows, Linux and Mac)* and architecture *(x86 or x64)*  when it is referenced by another C# library/exe. Furthermore the C# NetStandard library must be prepared to provide a nuget package. So you can use it as reference library *(development)* or nuget library *(release)* and the behavior must be the same.
 
 ## Projects
 
@@ -23,7 +23,7 @@ Create a C# NetStandard library that requires a C++ Native Library. Its must be 
 
 ## C++ NativeLib
 
-Simple C++ library that export a **Sum** function. this function receive two numbers and return the sum of theses numbers.
+Simple C++ library that export a **Sum** function. This function receives two numbers and return the sum of theses numbers.
 
 ### CMake 
 *(in NativeLib folder)*
