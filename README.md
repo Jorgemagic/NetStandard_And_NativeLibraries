@@ -1,4 +1,4 @@
-# Template C# NetStandard library that required a C++ Native Library
+# C# NetStandard library template that required a C++ Native Library
 This is a template that how to create a cross-platform C# NetStandard Library that required a C++ native library that another C# library can use as library reference or nuget reference with the same behavior.
 
 ## Prerequisites
