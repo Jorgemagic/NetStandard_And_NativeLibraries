@@ -51,7 +51,7 @@ cmake --build .
 
 * **binaries folder**: Content the native library compiles to all platforms
 * **NativeLibWrapper.targets**: Target to copy correct native libraries to final proyect by platform. *(Based on solution name)*.
-* **DllRegister.cs**: Class that select the correct native library architecture *(x86 or x64) *in runtime *(only on Windows)*.
+* **DllRegister.cs**: Class that select the correct native library architecture *(x86 or x64)* in runtime *(only on Windows)*.
 * **NativeLibWrapper.dll.config**: DLLMap file that indicates to pinvoke how to select the correct platform and architecture on mono platform *(only on Linux and Mac)*.
 * **NativeLibWrapper.cs**: Class with pinvoke method to native library
 
